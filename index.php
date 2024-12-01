@@ -15,7 +15,7 @@ if (!file_exists($targetDirectory)) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>File Upload</title>
+    <title>WAO - Web App One - File Upload</title>
 </head>
 <body>
     <h2>Upload a File</h2>
