@@ -24,8 +24,8 @@ class UploadFile {
             // Implement file upload logic here
             $targetPath = $targetDirectory . $originalName;
             if (move_uploaded_file($file_path, $targetPath)) {
-                echo 'File uploaded successfully!';  // Output success message
-                return $targetPath;  // Return the saved file path
+                echo 'File uploaded successfully!';
+                return $directory . $originalName;
             } else {
                 throw new Exception('File upload failed!');
             }

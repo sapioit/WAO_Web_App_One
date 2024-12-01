@@ -11,7 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['fileToUpload'])) {
         load_library('uploadfile');
         $upload = new UploadFile();
         $uploadedFilePath = $upload->add($targetDirectory, $filePath);
-        $relativeFilePath = $targetDirectory . basename($_FILES['fileToUpload']['name']); // Get relative path
+        // Remove leading slash from path for URL encoding
+        $relativeFilePath = ltrim($uploadedFilePath, '/');
     } catch (Exception $e) {
         echo 'Error: ' . $e->getMessage();
         $relativeFilePath = '';
